@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  site: 'https://gysytrade.com',
   output: 'static',
   i18n: {
     defaultLocale: 'zh',
