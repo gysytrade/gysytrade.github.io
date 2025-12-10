@@ -1,0 +1,107 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  ctaText: string;
+  ctaLink: string;
+}
+
+const { title, subtitle, ctaText, ctaLink } = Astro.props;
+---
+
+<div class="relative w-full h-[600px] md:h-[700px] overflow-hidden bg-primary">
+  <!-- Carousel Container (Stacked) -->
+  <div id="carousel-container" class="absolute inset-0 w-full h-full">
+    <!-- Slide 1 (Original index 2): Logistics/Air Freight -->
+    <div class="carousel-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100 z-10">
+      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2070" alt="Logistics" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-primary/40"></div>
+    </div>
+    <!-- Slide 2 (Original index 3): Corporate/Partnership -->
+    <div class="carousel-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=2032" alt="Corporate Partnership" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-primary/40"></div>
+    </div>
+    <!-- Slide 3 (Original index 5): Technology/Electronics -->
+    <div class="carousel-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0">
+       <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070" alt="High Tech Electronics" class="w-full h-full object-cover" />
+       <div class="absolute inset-0 bg-primary/40"></div>
+    </div>
+  </div>
+
+  <!-- Global Content Overlay (Z-Index higher than slides) -->
+  <div class="absolute inset-0 flex items-center z-20 pointer-events-none">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent"></div> <!-- Side gradient backing -->
+    <div class="container animate-fade-in relative px-4 md:px-8">
+      <div class="max-w-3xl pointer-events-auto">
+        <h1 class="text-4xl md:text-6xl font-bold font-serif mb-6 leading-tight drop-shadow-xl !text-white text-white">
+          {title}
+        </h1>
+        <p class="text-lg md:text-xl md:leading-relaxed !text-white text-gray-100 mb-10 drop-shadow-lg font-medium max-w-2xl">
+          {subtitle}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href={ctaLink} class="px-8 py-3 border-2 border-white rounded-md text-white font-bold hover:bg-white hover:text-primary transition-colors text-center shadow-lg bg-transparent">
+            {ctaText}
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel Indicators -->
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
+    <button class="w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-all duration-300 indicator cursor-pointer backdrop-blur-sm shadow-sm" data-index="0" aria-label="Slide 1"></button>
+    <button class="w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-all duration-300 indicator cursor-pointer backdrop-blur-sm shadow-sm" data-index="1" aria-label="Slide 2"></button>
+    <button class="w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-all duration-300 indicator cursor-pointer backdrop-blur-sm shadow-sm" data-index="2" aria-label="Slide 3"></button>
+  </div>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const indicators = document.querySelectorAll('.indicator');
+  const totalSlides = slides.length;
+
+  function updateCarousel() {
+    slides.forEach((slide, index) => {
+      if (index === currentSlide) {
+        slide.classList.remove('opacity-0', 'z-0');
+        slide.classList.add('opacity-100', 'z-10');
+      } else {
+        slide.classList.remove('opacity-100', 'z-10');
+        slide.classList.add('opacity-0', 'z-0');
+      }
+    });
+
+    indicators.forEach((ind, index) => {
+      if (index === currentSlide) {
+        ind.classList.remove('bg-white/40', 'scale-100');
+        ind.classList.add('bg-white', 'scale-125');
+      } else {
+        ind.classList.add('bg-white/40', 'scale-100');
+        ind.classList.remove('bg-white', 'scale-125');
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+  }
+
+  // Auto advance
+  const slideInterval = setInterval(nextSlide, 5000);
+
+  // Initial state
+  updateCarousel();
+  
+  // Indicator clicks
+  indicators.forEach(ind => {
+      ind.addEventListener('click', (e) => {
+          const target = e.target as HTMLElement;
+          currentSlide = parseInt(target.dataset.index || '0');
+          updateCarousel();
+      })
+  })
+</script>

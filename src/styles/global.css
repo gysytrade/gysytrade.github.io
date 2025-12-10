@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #003366;
+  /* Deep Navy Blue */
+  --color-primary-light: #004080;
+  --color-accent: #FF9900;
+  /* International Trade Orange/Gold */
+  --color-accent-hover: #E68A00;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  --animate-fade-in: fade-in 0.5s ease-out;
+}
+
+:root {
+  --color-text-main: #1F2937;
+  /* Gray 800 */
+  --color-text-muted: #6B7280;
+  /* Gray 500 */
+  --color-bg-light: #F9FAFB;
+  /* Gray 50 */
+}
+
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  color: var(--color-text-main);
+  background-color: white;
+}
+
+body {
+  @apply antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  @apply font-bold tracking-tight text-primary;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-full text-white bg-primary hover:bg-primary-light transition-all duration-300 shadow-md hover:shadow-lg;
+}
+
+.btn-accent {
+  @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-full text-white bg-accent hover:bg-accent-hover transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+}
+
+.section-padding {
+  @apply py-20 sm:py-32;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  bgImage: string;
+  textColor?: 'white' | 'black';
+  overlayOpacity?: string;
+}
+
+const { 
+  title, 
+  subtitle, 
+  bgImage, 
+  textColor = 'white',
+  overlayOpacity = 'opacity-50'
+} = Astro.props;
+
+const titleColor = textColor === 'white' ? '!text-white' : '!text-primary';
+const subColor = textColor === 'white' ? '!text-gray-100' : '!text-gray-700';
+const overlayClass = textColor === 'white' ? 'bg-primary/60' : 'bg-white/80';
+---
+
+<div class={`relative pt-40 pb-24 overflow-hidden`}>
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img src={bgImage} alt="Background" class="w-full h-full object-cover" />
+    <div class={`absolute inset-0 ${overlayClass} ${overlayOpacity}`}></div>
+  </div>
+
+  <!-- Content -->
+  <div class="container relative z-10 text-center">
+    <h1 class={`text-4xl md:text-5xl font-bold font-serif mb-6 drop-shadow-sm ${titleColor}`}>{title}</h1>
+    {subtitle && (
+      <p class={`text-xl max-w-2xl mx-auto font-medium ${subColor}`}>
+        {subtitle}
+      </p>
+    )}
+  </div>
+</div>
