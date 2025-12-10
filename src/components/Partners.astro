@@ -1,0 +1,67 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = "合作伙伴" } = Astro.props;
+
+// 使用可靠的CDN链接，确保LOGO图片能正常显示
+const partners = [
+  {
+    name: "Maersk",
+    logo: "/images/partners/1609281938595099716.png",
+    description: "全球最大的集装箱航运公司之一"
+  },
+  {
+    name: "DHL",
+    logo: "/images/partners/dhl.svg",
+    description: "国际物流与快递服务领导者"
+  },
+  {
+    name: "FedEx",
+    logo: "/images/partners/fedex.svg",
+    description: "全球快递运输服务提供商"
+  },
+  {
+    name: "UPS",
+    logo: "/images/partners/ups.svg",
+    description: "全球供应链解决方案领导者"
+  },
+  {
+    name: "COSCO",
+    logo: "/images/partners/magisk.svg",
+    description: "中国远洋海运集团"
+  }
+];
+---
+
+<section class="section-padding bg-white">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold font-serif text-primary mb-4">{title}</h2>
+      <div class="w-24 h-1 bg-accent mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      {partners.map((partner) => (
+        <div class="flex flex-col items-center p-6 rounded-xl bg-slate-50/50 border border-slate-100/50 hover:bg-white hover:shadow-lg transition-all duration-300 group">
+          <div class="w-20 h-20 mb-4 bg-white rounded-lg p-3 flex items-center justify-center shadow-sm group-hover:shadow-md transition-all">
+            <img 
+              src={partner.logo} 
+              alt={`${partner.name} Logo`} 
+              class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" 
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+            />
+            <!-- Fallback text with background if image fails to load -->
+            <div class="w-full h-full bg-primary/10 rounded flex items-center justify-center text-primary font-bold text-xl hidden">
+              {partner.name.charAt(0)}
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-primary text-center mb-2">{partner.name}</h3>
+          <p class="text-sm text-gray-600 text-center">{partner.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

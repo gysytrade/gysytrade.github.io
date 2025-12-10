@@ -79,23 +79,62 @@ const t = useTranslations(lang);
         </div>
       </div>
 
-      <!-- Contact Form -->
+      <!-- Company Introduction -->
       <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-fit">
-        <form class="space-y-6">
-            <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all" placeholder="John Doe">
+        <h3 class="text-2xl font-bold font-serif text-primary mb-6">Company Profile</h3>
+        
+        <!-- Company Logo -->
+        <div class="flex justify-center mb-6">
+          <img src="/logo1.png" alt="Guangyuan Shengyuan Logo" class="h-32 w-auto object-contain" />
+        </div>
+        
+        <!-- Company Information -->
+        <div class="space-y-4 text-sm">
+          <div class="bg-slate-50 rounded-lg p-4">
+            <h4 class="font-bold text-primary flex items-center gap-2 mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+              Company Credentials
+            </h4>
+            <ul class="space-y-1 text-gray-700">
+              <li><strong>Unified Social Credit Code:</strong> 91510802MAK30JGA1A</li>
+              <li><strong>Establishment Date:</strong> 2025-12-02</li>
+              <li><strong>Legal Representative:</strong> Xie Jinfu</li>
+            </ul>
+          </div>
+          
+          <div class="bg-accent/10 rounded-lg p-4">
+            <h4 class="font-bold text-accent flex items-center gap-2 mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A6.947 6.947 0 0117 15a6.947 6.947 0 01-4-1.745M21 13.255A6.947 6.947 0 0017 11.5a6.947 6.947 0 00-4 1.745m0 0A6.947 6.947 0 0113.5 15.5a6.947 6.947 0 001.745-4m-1.745 4A6.947 6.947 0 017.5 15.5a6.947 6.947 0 004-1.745M10.5 8.255A6.947 6.947 0 0113.5 7a6.947 6.947 0 011.745 4m-1.745-4A6.947 6.947 0 0113.5 12a6.947 6.947 0 01-1.745-4" />
+              </svg>
+              International Trade Services
+            </h4>
+            <p class="text-gray-700">
+              Specializing in international trade across textiles, building materials, appliances, and agricultural products. We provide quality import/export services connecting global markets.
+            </p>
+          </div>
+          
+          <div class="bg-primary/5 rounded-lg p-4">
+            <h4 class="font-bold text-primary flex items-center gap-2 mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Office Location
+            </h4>
+            <p class="text-gray-700">
+              {t('about.address')}
+            </p>
+            <a href="https://map.baidu.com/direction?destination=32.4336,105.8297" target="_blank" rel="noopener noreferrer" class="text-accent text-sm font-medium flex items-center gap-1 mt-2 group">
+                Get Directions
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
             </div>
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all" placeholder="john@example.com">
-            </div>
-            <div>
-                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all" placeholder="How can we help you?"></textarea>
-            </div>
-            <button type="submit" class="w-full btn-accent py-4 rounded-lg font-bold">Send Message</button>
-        </form>
+        </div>
       </div>
     </div>
   </section>

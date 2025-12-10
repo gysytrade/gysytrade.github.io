@@ -17,6 +17,20 @@ const getLocalizedUrl = (path: string) => {
   return lang === 'zh' ? path : `/${lang}${path}`;
 };
 
+// Logo text based on language
+const getLogoText = () => {
+  if (lang === 'zh') {
+    return {
+      main: '广元盛远',
+      sub: '国际贸易'
+    };
+  }
+  return {
+    main: 'GUANGYUAN',
+    sub: 'SHENGYUAN'
+  };
+};
+
 const { title, description = "Guangyuan Shengyuan International Trade Co., Ltd. - Connecting World Trade" } = Astro.props;
 ---
 
@@ -42,42 +56,46 @@ const { title, description = "Guangyuan Shengyuan International Trade Co., Ltd. 
       <nav class="container flex items-center justify-between h-20">
         <!-- Logo -->
         <a href={getLocalizedUrl("/")} class="flex items-center gap-3 group">
-          <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-md group-hover:shadow-lg transition-all relative overflow-hidden">
-             <!-- Globe Icon SVG -->
-             <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-accent relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-             </svg>
-             <div class="absolute inset-0 bg-gradient-to-tr from-primary-light to-transparent opacity-50"></div>
-          </div>
-          <div class="flex flex-col">
-            <span class="text-xl font-bold font-serif text-primary leading-none tracking-tight">GUANGYUAN</span>
-            <div class="flex items-center gap-1">
-                <span class="text-[0.65rem] text-accent font-bold tracking-[0.2em] uppercase">Shengyuan</span>
-                <span class="w-8 h-[1px] bg-gray-300"></span>
-            </div>
+          <img src="/logo.svg" alt="Guangyuan Shengyuan Logo" class="h-16 w-auto object-contain" />
+          <div class="flex items-center gap-2">
+            <span class="text-xl font-bold font-serif text-primary leading-none tracking-tight">{getLogoText().main}</span>
+            <span class="text-xl font-bold font-serif text-accent leading-none tracking-tight">{getLogoText().sub}</span>
           </div>
         </a>
         
+        <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
-          <a href={getLocalizedUrl("/")} class="text-sm font-medium text-primary hover:text-accent transition-colors">{t('nav.home')}</a>
-          <a href={getLocalizedUrl("/about")} class="text-sm font-medium text-primary hover:text-accent transition-colors">{t('nav.about')}</a>
-          <a href={getLocalizedUrl("/products")} class="text-sm font-medium text-primary hover:text-accent transition-colors">{t('nav.products')}</a>
-          <a href={getLocalizedUrl("/contact")} class="text-sm font-medium text-primary hover:text-accent transition-colors">{t('nav.contact')}</a>
+          <a href={getLocalizedUrl("/")} class="text-sm font-semibold font-serif text-primary hover:text-accent transition-colors tracking-wide">{t('nav.home')}</a>
+          <a href={getLocalizedUrl("/about")} class="text-sm font-semibold font-serif text-primary hover:text-accent transition-colors tracking-wide">{t('nav.about')}</a>
+          <a href={getLocalizedUrl("/products")} class="text-sm font-semibold font-serif text-primary hover:text-accent transition-colors tracking-wide">{t('nav.products')}</a>
+          <a href={getLocalizedUrl("/contact")} class="text-sm font-semibold font-serif text-primary hover:text-accent transition-colors tracking-wide">{t('nav.contact')}</a>
           
           <div class="border-l border-gray-200 h-6 mx-2"></div>
           
           <LanguagePicker />
-          
-          <a href={getLocalizedUrl("/contact")} class="btn-primary text-sm px-4 py-2 rounded-full ml-4">{t('nav.quote')}</a>
         </div>
 
-        <!-- Mobile menu button (simplified) -->
-        <button class="md:hidden text-primary">
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden text-primary relative z-50 p-2 focus:outline-none">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </nav>
+      
+      <!-- Mobile Navigation Menu -->
+      <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] hidden opacity-0 transition-opacity duration-300">
+        <div class="flex flex-col h-full pt-20 p-6">
+          <a href={getLocalizedUrl("/")} class="text-lg font-medium font-serif text-primary py-3 border-b border-gray-100 hover:text-accent transition-colors">{t('nav.home')}</a>
+          <a href={getLocalizedUrl("/about")} class="text-lg font-medium font-serif text-primary py-3 border-b border-gray-100 hover:text-accent transition-colors">{t('nav.about')}</a>
+          <a href={getLocalizedUrl("/products")} class="text-lg font-medium font-serif text-primary py-3 border-b border-gray-100 hover:text-accent transition-colors">{t('nav.products')}</a>
+          <a href={getLocalizedUrl("/contact")} class="text-lg font-medium font-serif text-primary py-3 border-b border-gray-100 hover:text-accent transition-colors">{t('nav.contact')}</a>
+          
+          <div class="mt-6 pt-6 border-t border-gray-200">
+            <LanguagePicker />
+          </div>
+        </div>
+      </div>
     </header>
 
     <main class="flex-grow pt-20 relative z-10">
@@ -122,5 +140,50 @@ const { title, description = "Guangyuan Shengyuan International Trade Co., Ltd. 
         {t('footer.rights')}
       </div>
     </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener('click', () => {
+            // Toggle menu visibility with transition
+            if (mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.remove('hidden');
+              // Force a reflow before adding opacity
+              void mobileMenu.offsetWidth;
+              mobileMenu.classList.remove('opacity-0');
+            } else {
+              mobileMenu.classList.add('opacity-0');
+              // Wait for transition to complete before hiding
+              setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+              }, 300);
+            }
+          });
+          
+          // Close menu when clicking on links
+          const mobileLinks = mobileMenu.querySelectorAll('a');
+          mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              mobileMenu.classList.add('opacity-0');
+              setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+              }, 300);
+            });
+          });
+          
+          // Close menu when clicking outside
+          document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+              mobileMenu.classList.add('opacity-0');
+              setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+              }, 300);
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

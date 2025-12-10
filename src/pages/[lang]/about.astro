@@ -43,11 +43,23 @@ const t = useTranslations(lang as any);
       </div>
 
       <div class="space-y-8">
+        <!-- Company Logo -->
+        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg text-center">
+            <h3 class="text-xl font-bold mb-4 text-center">{t('nav.about')}</h3>
+            <img 
+                src="/logo1.png" 
+                alt="Guangyuan Shengyuan International Trade Logo" 
+                class="h-40 mx-auto object-contain mb-4"
+            />
+            <p class="text-gray-600">{t('about.leadership')}</p>
+        </div>
+        
+        <!-- Business License -->
         <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm">
             <h3 class="text-xl font-bold mb-4 text-center">Business License</h3>
             <div class="relative group cursor-pointer overflow-hidden rounded-lg border border-gray-200">
                 <img 
-                    src="/营业执照.jpg" 
+                    src="/yingyezhizhao.jpg" 
                     alt="Business License of Guangyuan Shengyuan International Trade Co., Ltd." 
                     class="w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
                 />

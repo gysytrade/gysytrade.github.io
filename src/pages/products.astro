@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import FeatureGrid from '../components/FeatureGrid.astro';
+import FeatureGridEnhanced from '../components/FeatureGridEnhanced.astro';
 import PageHeader from '../components/PageHeader.astro';
 import { useTranslations } from '../i18n/utils';
 
@@ -44,8 +44,8 @@ const products = [
     textColor="black"
   />
 
-  <section class="section-padding">
-    <FeatureGrid title={t('business.title')} features={products} />
+  <section>
+    <FeatureGridEnhanced title={t('business.title')} features={products} />
   </section>
 
   <section class="py-20 bg-slate-50/80 backdrop-blur-sm">

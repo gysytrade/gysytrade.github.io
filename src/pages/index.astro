@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HeroCarousel from '../components/HeroCarousel.astro';
-import FeatureGrid from '../components/FeatureGrid.astro';
+import FeatureGridEnhanced from '../components/FeatureGridEnhanced.astro';
+import Partners from '../components/Partners.astro';
 import { useTranslations } from '../i18n/utils';
 import { getCollection } from 'astro:content';
 
@@ -85,10 +86,13 @@ const features = [
     </div>
   </section>
 
-  <FeatureGrid 
+  <FeatureGridEnhanced 
     title={t('business.title')}
     features={features} 
   />
+
+  <!-- Partners Section -->
+  <Partners />
 
   <!-- News Section -->
   {hasNews && (

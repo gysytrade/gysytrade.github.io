@@ -27,7 +27,7 @@ export const ui = {
 
         'about.title': '值得信赖的全球贸易伙伴',
         'about.desc': '广元盛远国际贸易有限公司成立于2025年，位于四川广元，是一家综合性贸易企业。我们专注于纺织、建材、电子和农产品等广泛领域。',
-        'about.leadership': '在谢金富先生的领导下，我们本着诚信、创新、互利共赢的原则，致力于促进国际贸易畅通，为全球合作伙伴提供顶级服务。',
+        'about.leadership': '我们本着诚信、创新、互利共赢的原则，致力于促进国际贸易畅通，为全球合作伙伴提供顶级服务。',
         'about.learn_more': '了解更多',
         'about.company_name': '公司名称：广元盛远国际贸易有限公司',
         'about.legal_rep': '法定代表人：谢金富',
@@ -49,6 +49,7 @@ export const ui = {
 
         'section.news': '新闻动态',
         'section.history': '发展历程',
+        'partners.title': '合作伙伴',
         'cta.title': '准备好拓展您的业务了吗？',
         'cta.subtitle': '与广元盛远合作，享受可靠、高效、专业的贸易服务。',
         'cta.button': '立即联系',
@@ -75,13 +76,16 @@ export const ui = {
 
         'about.title': 'Reliable Partner in Global Trade',
         'about.desc': 'Established in 2025, Guangyuan Shengyuan International Trade Co., Ltd. is a comprehensive trading enterprise based in Guangyuan, Sichuan. We specialize in textiles, building materials, electronics, and agricultural products.',
-        'about.leadership': 'Led by Mr. Xie Jinfu, our company is built on integrity, innovation, and mutual benefit. We facilitate smoother international trade and provide top-tier service.',
+        'about.leadership': 'Our company is built on integrity, innovation, and mutual benefit. We facilitate smoother international trade and provide top-tier service.',
         'about.learn_more': 'Learn More',
         'about.company_name': 'Company: Guangyuan Shengyuan International Trade Co., Ltd.',
         'about.legal_rep': 'Legal Rep: Xie Jinfu',
         'about.address': 'Add: No. 20-1, State Investment Building, Huangguo Road, Lizhou District, Guangyuan, Sichuan',
 
         'business.title': 'Our Business Scope',
+        'section.news': 'News & Updates',
+        'section.history': 'History',
+        'partners.title': 'Partners',
         'cta.title': 'Ready to Expand Your Business?',
         'cta.subtitle': 'Partner with Guangyuan Shengyuan for reliable, efficient, and professional trade services.',
         'cta.button': 'Contact Us Today',
@@ -128,6 +132,9 @@ export const ui = {
         'about.address': 'Dir: No. 20-1, State Investment Building, Huangguo Road, Distrito Lizhou, Guangyuan, Sichuan',
 
         'business.title': 'Nuestro Alcance Comercial',
+        'section.news': 'Noticias y Actualizaciones',
+        'section.history': 'Historia',
+        'partners.title': 'Socios',
         'cta.title': '¿Listo para Expandir su Negocio?',
         'cta.subtitle': 'Asóciese con Guangyuan Shengyuan para servicios comerciales confiables, eficientes y profesionales.',
         'cta.button': 'Contáctenos Hoy',
@@ -174,6 +181,9 @@ export const ui = {
         'about.address': '住所：四川省広元市利州区万縁街道凰国路国投大厦20-1号',
 
         'business.title': '事業内容',
+        'section.news': 'ニュース＆アップデート',
+        'section.history': '沿革',
+        'partners.title': 'パートナー',
         'cta.title': 'ビジネスを拡大しませんか？',
         'cta.subtitle': '広元盛遠と提携し、信頼性が高く効率的でプロフェッショナルな貿易サービスをご利用ください。',
         'cta.button': '今すぐ連絡する',
@@ -220,6 +230,9 @@ export const ui = {
         'about.address': '주소: 쓰촨성 광원시 리저우구 만연가도 황국로 국투빌딩 20-1호',
 
         'business.title': '사업 범위',
+        'section.news': '뉴스 및 업데이트',
+        'section.history': '역사',
+        'partners.title': '파트너',
         'cta.title': '비즈니스를 확장하시겠습니까?',
         'cta.subtitle': '신뢰할 수 있고 효율적이며 전문적인 무역 서비스를 위해 광원성원과 파트너십을 맺으십시오.',
         'cta.button': '지금 문의하기',
@@ -266,6 +279,9 @@ export const ui = {
         'about.address': 'Adr : No. 20-1, Batiment d\'Investissement d\'État, Route Huangguo, District Lizhou, Guangyuan, Sichuan',
 
         'business.title': 'Notre domaine d\'activité',
+        'section.news': 'Actualités',
+        'section.history': 'Histoire',
+        'partners.title': 'Partenaires',
         'cta.title': 'Prêt à développer votre entreprise ?',
         'cta.subtitle': 'Associez-vous à Guangyuan Shengyuan pour des services commerciaux fiables, efficaces et professionnels.',
         'cta.button': 'Contactez-nous',
@@ -315,6 +331,9 @@ export const ui = {
         'about.address': 'Adr: Nr. 20-1, Staatsinvestitionsgebäude, Huangguo Straße, Bezirk Lizhou, Guangyuan, Sichuan',
 
         'business.title': 'Unser Geschäftsbereich',
+        'section.news': 'Neuigkeiten',
+        'section.history': 'Geschichte',
+        'partners.title': 'Partner',
         'cta.title': 'Bereit, Ihr Geschäft zu erweitern?',
         'cta.subtitle': 'Arbeiten Sie mit Guangyuan Shengyuan für zuverlässige, effiziente und professionelle Handelsdienstleistungen zusammen.',
         'cta.button': 'Kontaktieren Sie uns',
@@ -326,9 +345,6 @@ export const ui = {
         'contact.mobile': 'Mobil',
         'contact.wechat': 'WeChat',
         'contact.email': 'E-Mail',
-
-        'section.news': 'Neuigkeiten',
-        'section.history': 'Geschichte',
 
         'feature.textiles': 'Textilien & Strickwaren',
         'feature.textiles_desc': 'Hochwertige Stoffe, Rohstoffe und fertige Textilien für verschiedene Industrien.',
@@ -364,6 +380,9 @@ export const ui = {
         'about.address': 'Адрес: № 20-1, Здание Гос. Инвестиций, ул. Хуанго, район Личжоу, Гуанъюань, Сычуань',
 
         'business.title': 'Сфера нашей деятельности',
+        'section.news': 'Новости',
+        'section.history': 'История',
+        'partners.title': 'Партнеры',
         'cta.title': 'Готовы расширить свой бизнес?',
         'cta.subtitle': 'Сотрудничайте с Guangyuan Shengyuan для получения надежных, эффективных и профессиональных торговых услуг.',
         'cta.button': 'Свяжитесь с нами',
@@ -375,9 +394,6 @@ export const ui = {
         'contact.mobile': 'Мобильный',
         'contact.wechat': 'WeChat',
         'contact.email': 'Электронная почта',
-
-        'section.news': 'Новости',
-        'section.history': 'История',
 
         'feature.textiles': 'Текстиль и трикотаж',
         'feature.textiles_desc': 'Высококачественные ткани, сырье и готовый текстиль для различных отраслей.',
@@ -413,6 +429,9 @@ export const ui = {
         'about.address': 'End: No. 20-1, Edifício de Investimento Estatal, Rua Huangguo, Distrito Lizhou, Guangyuan, Sichuan',
 
         'business.title': 'Nosso Escopo de Negócios',
+        'section.news': 'Notícias',
+        'section.history': 'História',
+        'partners.title': 'Parceiros',
         'cta.title': 'Pronto para Expandir seu Negócio?',
         'cta.subtitle': 'Seja parceiro da Guangyuan Shengyuan para serviços comerciais confiáveis, eficientes e profissionais.',
         'cta.button': 'Contate-nos Hoje',
@@ -424,9 +443,6 @@ export const ui = {
         'contact.mobile': 'Celular',
         'contact.wechat': 'WeChat',
         'contact.email': 'E-mail',
-
-        'section.news': 'Notícias',
-        'section.history': 'História',
 
         'feature.textiles': 'Têxteis e Tricô',
         'feature.textiles_desc': 'Tecidos de alta qualidade, matérias-primas e têxteis acabados para várias indústrias.',
