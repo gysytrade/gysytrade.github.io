@@ -1,4 +1,133 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import HeroCarousel from '../components/HeroCarousel.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import { useTranslations } from '../i18n/utils';
+import { getCollection } from 'astro:content';
+
+// Use zh as default language for root path
+const lang = 'zh';
+const t = useTranslations(lang);
+
+// Fetch news for current language
+const allNews = await getCollection('news');
+const currentLangNews = allNews.filter(post => post.slug.startsWith(lang));
+// Sort by date desc
+const sortedNews = currentLangNews.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+
+// Fallback if no news found (e.g. for creating initial structure view)
+const hasNews = sortedNews.length > 0;
+
+const features = [
+  {
+    title: t('feature.textiles'),
+    description: t('feature.textiles_desc'),
+  },
+  {
+    title: t('feature.apparel'),
+    description: t('feature.apparel_desc'),
+  },
+  {
+    title: t('feature.agriculture'),
+    description: t('feature.agriculture_desc'),
+  },
+  {
+    title: t('feature.construction'),
+    description: t('feature.construction_desc'),
+  },
+    {
+    title: t('feature.appliances'),
+    description: t('feature.appliances_desc'),
+  },
+    {
+    title: t('feature.stationery'),
+    description: t('feature.stationery_desc'),
+  }
+];
 ---
 
-<meta http-equiv="refresh" content="0;url=/zh/" />
+<Layout title="Guangyuan Shengyuan International Trade - Connecting World Trade">
+  <HeroCarousel 
+    title={t('hero.title')}
+    subtitle={t('hero.subtitle')}
+    ctaText={t('hero.cta')}
+    ctaLink="/products"
+  />
+
+  <section class="py-20 bg-slate-50/80 backdrop-blur-sm relative z-10">
+    <div class="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <h4 class="text-accent font-bold tracking-wider uppercase text-sm">{t('about.title')}</h4>
+        <h2 class="text-3xl md:text-4xl font-bold font-serif text-primary">{t('about.title')}</h2>
+        <p class="text-gray-600 leading-relaxed text-lg">
+          {t('about.desc')}
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          {t('about.leadership')}
+        </p>
+        <div class="pt-4">
+          <a href="/about" class="text-primary font-bold hover:text-accent transition-colors flex items-center gap-2 group">
+            {t('about.learn_more')}
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="relative group">
+        <div class="absolute -inset-4 bg-accent/20 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform"></div>
+        <img 
+          src="/companypic.png" 
+          alt="Guangyuan Shengyuan Office Effect" 
+          class="relative rounded-2xl shadow-xl w-full h-auto object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <FeatureGrid 
+    title={t('business.title')}
+    features={features} 
+  />
+
+  <!-- News Section -->
+  {hasNews && (
+  <section class="py-20 relative z-10">
+      <div class="container">
+          <h2 class="text-3xl font-bold font-serif text-center mb-12">{t('section.news')}</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {sortedNews.map(item => {
+                 const slugPart = item.slug.split('/')[1];
+                 const href = `/news/${slugPart}`;
+                 return (
+                  <a href={href} class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group block">
+                      <div class="text-sm text-accent font-bold mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-accent"></span>
+                        {item.data.date.toLocaleDateString(lang)}
+                      </div>
+                      <h3 class="text-xl font-bold text-primary leading-tight mb-3 group-hover:text-accent transition-colors">
+                        {item.data.title}
+                      </h3>
+                      <p class="text-gray-500 line-clamp-3 text-sm leading-relaxed">
+                        {item.data.description}
+                      </p>
+                  </a>
+              )})}
+          </div>
+      </div>
+  </section>
+  )}
+
+  <section class="py-24 bg-primary text-white text-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-primary-light/50"></div>
+    <div class="container max-w-4xl mx-auto relative z-10">
+      <h2 class="text-3xl md:text-5xl font-bold font-serif mb-6">{t('cta.title')}</h2>
+      <p class="text-xl text-gray-300 mb-10">
+        {t('cta.subtitle')}
+      </p>
+      <a href="/contact" class="btn-accent text-lg px-10 py-5 rounded-full inline-block">
+        {t('cta.button')}
+      </a>
+    </div>
+  </section>
+</Layout>

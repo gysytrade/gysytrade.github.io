@@ -20,7 +20,7 @@ const route = getRouteFromUrl(Astro.url);
   <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right z-50 border border-gray-100">
     {Object.entries(languages).map(([label, name]) => (
       <a 
-        href={`/${label}/${route ? route : ''}`}
+        href={`/${label === 'zh' ? '' : label + '/'}${route ? route : ''}`}
         class={`block px-4 py-2 text-sm hover:bg-slate-50 hover:text-accent transition-colors ${lang === label ? 'text-accent font-bold' : 'text-gray-700'}`}
       >
         {name}

@@ -8,7 +8,7 @@ export default defineConfig({
     defaultLocale: 'zh',
     locales: ['zh', 'en', 'es', 'ja', 'ko', 'fr', 'de', 'ru', 'pt'],
     routing: {
-      prefixDefaultLocale: true
+      prefixDefaultLocale: false
     }
   },
   vite: {

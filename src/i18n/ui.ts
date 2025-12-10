@@ -55,6 +55,11 @@ export const ui = {
 
         'footer.rights': '版权所有 © 2025 广元盛远国际贸易有限公司',
         'footer.desc': '专业的进出口服务。您通往全球市场的桥梁。',
+        
+        'contact.phone': '电话',
+        'contact.mobile': '手机',
+        'contact.wechat': '微信',
+        'contact.email': '邮箱',
     },
     en: {
         'nav.home': 'Home',
@@ -83,6 +88,11 @@ export const ui = {
 
         'footer.rights': '© 2025 Guangyuan Shengyuan International Trade Co., Ltd. All rights reserved.',
         'footer.desc': 'Professional import & export services. Your bridge to global markets.',
+        
+        'contact.phone': 'Phone',
+        'contact.mobile': 'Mobile',
+        'contact.wechat': 'WeChat',
+        'contact.email': 'Email',
 
         'feature.textiles': 'Textiles & Knitting',
         'feature.textiles_desc': 'High-quality fabrics, raw materials, and finished textiles for various industries.',
@@ -124,6 +134,11 @@ export const ui = {
 
         'footer.rights': '© 2025 Guangyuan Shengyuan International Trade Co., Ltd. Todos los derechos reservados.',
         'footer.desc': 'Servicios profesionales de importación y exportación. Su puente hacia los mercados globales.',
+        
+        'contact.phone': 'Teléfono',
+        'contact.mobile': 'Móvil',
+        'contact.wechat': 'WeChat',
+        'contact.email': 'Correo electrónico',
 
         'feature.textiles': 'Textiles y Tejidos',
         'feature.textiles_desc': 'Telas de alta calidad, materias primas y textiles acabados para diversas industrias.',
@@ -165,6 +180,11 @@ export const ui = {
 
         'footer.rights': '© 2025 広元盛遠国際貿易有限公司 All rights reserved.',
         'footer.desc': '専門的な輸出入サービス。世界市場への架け橋となります。',
+        
+        'contact.phone': '電話',
+        'contact.mobile': '携帯電話',
+        'contact.wechat': 'WeChat',
+        'contact.email': 'Eメール',
 
         'feature.textiles': '繊維・ニット',
         'feature.textiles_desc': '様々な産業向けの高品質な生地、原材料、完成繊維製品。',
@@ -206,6 +226,11 @@ export const ui = {
 
         'footer.rights': '© 2025 광원성원국제무역유한공사. All rights reserved.',
         'footer.desc': '전문 수출입 서비스. 글로벌 시장으로 가는 다리.',
+        
+        'contact.phone': '전화',
+        'contact.mobile': '모바일',
+        'contact.wechat': '위챗',
+        'contact.email': '이메일',
 
         'feature.textiles': '섬유 및 니트',
         'feature.textiles_desc': '다양한 산업을 위한 고품질 원단, 원자재 및 완제품 섬유.',
@@ -247,6 +272,11 @@ export const ui = {
 
         'footer.rights': '© 2025 Guangyuan Shengyuan International Trade Co., Ltd. Tous droits réservés.',
         'footer.desc': 'Services professionnels d\'import-export. Votre pont vers les marchés mondiaux.',
+        
+        'contact.phone': 'Téléphone',
+        'contact.mobile': 'Mobile',
+        'contact.wechat': 'WeChat',
+        'contact.email': 'E-mail',
 
         'section.news': 'Actualités',
         'section.history': 'Histoire',
@@ -291,6 +321,11 @@ export const ui = {
 
         'footer.rights': '© 2025 Guangyuan Shengyuan International Trade Co., Ltd. Alle Rechte vorbehalten.',
         'footer.desc': 'Professionelle Import- & Exportdienste. Ihre Brücke zu den globalen Märkten.',
+        
+        'contact.phone': 'Telefon',
+        'contact.mobile': 'Mobil',
+        'contact.wechat': 'WeChat',
+        'contact.email': 'E-Mail',
 
         'section.news': 'Neuigkeiten',
         'section.history': 'Geschichte',
@@ -335,6 +370,11 @@ export const ui = {
 
         'footer.rights': '© 2025 Guangyuan Shengyuan International Trade Co., Ltd. Все права защищены.',
         'footer.desc': 'Профессиональные услуги импорта и экспорта. Ваш мост на мировые рынки.',
+        
+        'contact.phone': 'Телефон',
+        'contact.mobile': 'Мобильный',
+        'contact.wechat': 'WeChat',
+        'contact.email': 'Электронная почта',
 
         'section.news': 'Новости',
         'section.history': 'История',
@@ -379,6 +419,11 @@ export const ui = {
 
         'footer.rights': '© 2025 Guangyuan Shengyuan International Trade Co., Ltd. Todos os direitos reservados.',
         'footer.desc': 'Serviços profissionais de importação e exportação. Sua ponte para os mercados globais.',
+        
+        'contact.phone': 'Telefone',
+        'contact.mobile': 'Celular',
+        'contact.wechat': 'WeChat',
+        'contact.email': 'E-mail',
 
         'section.news': 'Notícias',
         'section.history': 'História',

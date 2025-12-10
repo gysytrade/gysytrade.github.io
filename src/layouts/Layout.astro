@@ -12,6 +12,11 @@ interface Props {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+// Create a helper function to generate URLs that properly handle the default language
+const getLocalizedUrl = (path: string) => {
+  return lang === 'zh' ? path : `/${lang}${path}`;
+};
+
 const { title, description = "Guangyuan Shengyuan International Trade Co., Ltd. - Connecting World Trade" } = Astro.props;
 ---
 
@@ -36,7 +41,7 @@ const { title, description = "Guangyuan Shengyuan International Trade Co., Ltd. 
     <header class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
       <nav class="container flex items-center justify-between h-20">
         <!-- Logo -->
-        <a href={`/${lang}/`} class="flex items-center gap-3 group">
+        <a href={getLocalizedUrl("/")} class="flex items-center gap-3 group">
           <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-md group-hover:shadow-lg transition-all relative overflow-hidden">
              <!-- Globe Icon SVG -->
              <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-accent relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,16 +59,16 @@ const { title, description = "Guangyuan Shengyuan International Trade Co., Ltd. 
         </a>
         
         <div class="hidden md:flex items-center space-x-8">
-          <a href={`/${lang}/`} class="text-sm font-medium text-primary hover:text-accent transition-colors">{t('nav.home')}</a>
-          <a href={`/${lang}/about`} class="text-sm font-medium text-primary hover:text-accent transition-colors">{t('nav.about')}</a>
-          <a href={`/${lang}/products`} class="text-sm font-medium text-primary hover:text-accent transition-colors">{t('nav.products')}</a>
-          <a href={`/${lang}/contact`} class="text-sm font-medium text-primary hover:text-accent transition-colors">{t('nav.contact')}</a>
+          <a href={getLocalizedUrl("/")} class="text-sm font-medium text-primary hover:text-accent transition-colors">{t('nav.home')}</a>
+          <a href={getLocalizedUrl("/about")} class="text-sm font-medium text-primary hover:text-accent transition-colors">{t('nav.about')}</a>
+          <a href={getLocalizedUrl("/products")} class="text-sm font-medium text-primary hover:text-accent transition-colors">{t('nav.products')}</a>
+          <a href={getLocalizedUrl("/contact")} class="text-sm font-medium text-primary hover:text-accent transition-colors">{t('nav.contact')}</a>
           
           <div class="border-l border-gray-200 h-6 mx-2"></div>
           
           <LanguagePicker />
           
-          <a href={`/${lang}/contact`} class="btn-primary text-sm px-4 py-2 rounded-full ml-4">{t('nav.quote')}</a>
+          <a href={getLocalizedUrl("/contact")} class="btn-primary text-sm px-4 py-2 rounded-full ml-4">{t('nav.quote')}</a>
         </div>
 
         <!-- Mobile menu button (simplified) -->
@@ -97,10 +102,10 @@ const { title, description = "Guangyuan Shengyuan International Trade Co., Ltd. 
         <div>
           <h4 class="font-bold mb-4">Quick Links</h4>
           <ul class="space-y-2 text-gray-400">
-            <li><a href={`/${lang}/`} class="hover:text-accent">{t('nav.home')}</a></li>
-            <li><a href={`/${lang}/about`} class="hover:text-accent">{t('nav.about')}</a></li>
-            <li><a href={`/${lang}/products`} class="hover:text-accent">{t('nav.products')}</a></li>
-            <li><a href={`/${lang}/contact`} class="hover:text-accent">{t('nav.contact')}</a></li>
+            <li><a href={getLocalizedUrl("/")} class="hover:text-accent">{t('nav.home')}</a></li>
+            <li><a href={getLocalizedUrl("/about")} class="hover:text-accent">{t('nav.about')}</a></li>
+            <li><a href={getLocalizedUrl("/products")} class="hover:text-accent">{t('nav.products')}</a></li>
+            <li><a href={getLocalizedUrl("/contact")} class="hover:text-accent">{t('nav.contact')}</a></li>
           </ul>
         </div>
         <div>
