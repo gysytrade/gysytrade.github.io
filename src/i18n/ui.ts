@@ -294,9 +294,6 @@ export const ui = {
         'contact.wechat': 'WeChat',
         'contact.email': 'E-mail',
 
-        'section.news': 'Actualités',
-        'section.history': 'Histoire',
-
         'feature.textiles': 'Textiles et Tricots',
         'feature.textiles_desc': 'Tissus de haute qualité, matières premières et textiles finis pour diverses industries.',
         'feature.apparel': 'Vêtements et Accessoires',

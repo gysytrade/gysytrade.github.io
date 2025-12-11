@@ -5,11 +5,11 @@ interface Props {
 
 const { title = "合作伙伴" } = Astro.props;
 
-// 使用可靠的CDN链接，确保LOGO图片能正常显示
+// 使用本地的LOGO图片，确保显示正常
 const partners = [
   {
     name: "Maersk",
-    logo: "/images/partners/1609281938595099716.png",
+    logo: "/images/partners/maersk.webp",
     description: "全球最大的集装箱航运公司之一"
   },
   {
@@ -29,7 +29,7 @@ const partners = [
   },
   {
     name: "COSCO",
-    logo: "/images/partners/magisk.svg",
+    logo: "/images/partners/1609281938595099716.png",
     description: "中国远洋海运集团"
   }
 ];
