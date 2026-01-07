@@ -59,7 +59,7 @@ export const ui = {
         
         'contact.phone': '电话',
         'contact.mobile': '手机',
-        'contact.wechat': '微信',
+        'contact.mobile2': '手机2',
         'contact.email': '邮箱',
     },
     en: {
@@ -95,7 +95,7 @@ export const ui = {
         
         'contact.phone': 'Phone',
         'contact.mobile': 'Mobile',
-        'contact.wechat': 'WeChat',
+        'contact.mobile2': 'Mobile 2',
         'contact.email': 'Email',
 
         'feature.textiles': 'Textiles & Knitting',

@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import { useTranslations } from '../../i18n/utils';
 
 export async function getStaticPaths() {
   const newsEntries = await getCollection('news');
@@ -25,7 +24,6 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 const lang = 'zh'; // Default to zh for root path
-const t = useTranslations(lang);
 
 const formattedDate = entry.data.date.toLocaleDateString(lang, {
   year: 'numeric',

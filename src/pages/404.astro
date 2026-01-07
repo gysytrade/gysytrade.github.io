@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Default to English for 404
+---
+
+<Layout title="404 - Page Not Found">
+  <div class="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
+    <h1 class="text-6xl font-bold text-primary mb-4">404</h1>
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Page Not Found / 页面未找到</h2>
+    <p class="text-gray-600 mb-8 max-w-md">
+      The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+      <br/><br/>
+      您访问的页面可能已被移除、更名或暂时无法访问。
+    </p>
+    <a 
+      href="/" 
+      class="inline-block bg-accent hover:bg-accent-dark text-white font-bold py-3 px-8 rounded-full transition duration-300"
+    >
+      Go Home / 返回首页
+    </a>
+  </div>
+</Layout>

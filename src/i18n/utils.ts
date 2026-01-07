@@ -20,3 +20,15 @@ export function getRouteFromUrl(url: URL): string | undefined {
     }
     return undefined;
 }
+
+export function getLocalizedPath(path: string, lang: string) {
+    // Ensure path starts with /
+    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+    // If default lang (zh), return path as is (assuming root is zh)
+    // If other lang, prepend /lang
+    // Handle root path specially if needed, but usually /en/ works for /en
+    if (lang === defaultLang) {
+        return normalizedPath;
+    }
+    return `/${lang}${normalizedPath === '/' ? '' : normalizedPath}`;
+}

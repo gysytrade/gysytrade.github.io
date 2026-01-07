@@ -91,7 +91,7 @@ const { title, subtitle, ctaText, ctaLink } = Astro.props;
   }
 
   // Auto advance
-  const slideInterval = setInterval(nextSlide, 5000);
+  setInterval(nextSlide, 5000);
 
   // Initial state
   updateCarousel();

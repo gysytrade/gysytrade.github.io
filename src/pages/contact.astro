@@ -48,16 +48,11 @@ const t = useTranslations(lang);
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
             </div>
-            <div>
-                <h4 class="font-bold text-lg mb-1">{t('contact.phone')} / {t('contact.mobile')} / {t('contact.wechat')}</h4>
-                <p class="text-gray-600 font-mono">+86 0839 32XXXXX</p>
-                <p class="text-gray-600 font-mono text-lg font-bold text-primary">+86 138 8888 XXXX</p>
-                <div class="mt-2 text-sm text-green-600 font-bold flex items-center gap-1">
-                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
-                    WeChat ID: (Pending)
-                </div>
+            <div class="space-y-2">
+                <h4 class="font-bold text-lg">{t('contact.phone')} / {t('contact.mobile')}</h4>
+                <p class="text-gray-600 font-mono text-lg font-bold text-primary tracking-wide">+86 0839-6019988</p>
+                <p class="text-gray-600 font-mono tracking-wide">+86 188 8667 8144</p>
+                <p class="text-gray-600 font-mono tracking-wide">+86 188 8667 8244</p>
             </div>
         </div>
 
@@ -69,14 +64,15 @@ const t = useTranslations(lang);
             </div>
             <div>
                 <h4 class="font-bold text-lg mb-1">{t('contact.email')}</h4>
-                <p class="text-gray-600">XXXX@gmail.com</p>
+                <p class="text-gray-600 font-mono">shengyuan@gysytrade.cn</p>
             </div>
         </div>
         
-        <!-- Large Map Embed -->
-        <div class="mt-8 rounded-xl overflow-hidden shadow-lg border border-gray-100 h-64">
-             <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=105.80%2C32.40%2C105.86%2C32.46&amp;layer=mapnik&amp;marker=32.4336%2C105.8297"></iframe>
-        </div>
+        <!-- Large Map -->
+        <div 
+          id="contact-map-container" 
+          class="block mt-8 rounded-xl overflow-hidden shadow-lg border border-gray-100 h-96 relative z-10"
+        ></div>
       </div>
 
       <!-- Company Introduction -->
@@ -85,7 +81,7 @@ const t = useTranslations(lang);
         
         <!-- Company Logo -->
         <div class="flex justify-center mb-6">
-          <img src="/logo1.png" alt="Guangyuan Shengyuan Logo" class="h-32 w-auto object-contain" />
+          <img src="/logo.png" alt="Guangyuan Shengyuan Logo" class="h-32 w-auto object-contain" />
         </div>
         
         <!-- Company Information -->
@@ -127,7 +123,7 @@ const t = useTranslations(lang);
             <p class="text-gray-700">
               {t('about.address')}
             </p>
-            <a href="https://map.baidu.com/direction?destination=32.4336,105.8297" target="_blank" rel="noopener noreferrer" class="text-accent text-sm font-medium flex items-center gap-1 mt-2 group">
+            <a href="https://map.baidu.com/search/广元万达广场/@12945823,3492962,13z" target="_blank" rel="noopener noreferrer" class="text-accent text-sm font-medium flex items-center gap-1 mt-2 group">
                 Get Directions
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
