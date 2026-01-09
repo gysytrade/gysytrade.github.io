@@ -348,6 +348,7 @@ export const ui = {
         'contact.mobile': 'Mobil',
         'contact.wechat': 'WeChat',
         'contact.email': 'E-Mail',
+        'contact.desc': 'Kontaktieren Sie uns gerne für eine geschäftliche Zusammenarbeit.',
 
         'feature.textiles': 'Textilien & Strickwaren',
         'feature.textiles_desc': 'Hochwertige Stoffe, Rohstoffe und fertige Textilien für verschiedene Industrien.',
@@ -448,6 +449,7 @@ export const ui = {
         'contact.mobile': 'Celular',
         'contact.wechat': 'WeChat',
         'contact.email': 'E-mail',
+        'contact.desc': 'Entre em contato conosco para cooperação comercial.',
 
         'feature.textiles': 'Têxteis e Tricô',
         'feature.textiles_desc': 'Tecidos de alta qualidade, matérias-primas e têxteis acabados para várias indústrias.',
