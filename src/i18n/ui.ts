@@ -61,6 +61,7 @@ export const ui = {
         'contact.mobile': '手机',
         'contact.mobile2': '手机2',
         'contact.email': '邮箱',
+        'contact.desc': '欢迎联系我们洽谈商务合作。',
     },
     en: {
         'nav.home': 'Home',
@@ -80,7 +81,7 @@ export const ui = {
         'about.learn_more': 'Learn More',
         'about.company_name': 'Company: Guangyuan Shengyuan International Trade Co., Ltd.',
         'about.legal_rep': 'Legal Rep: Xie Jinfu',
-        'about.address': 'Add: No. 20-1, State Investment Building, Huangguo Road, Lizhou District, Guangyuan, Sichuan',
+        'about.address': 'Add: Room 10-5-6, Wanda Center, Wanyuan Subdistrict, Lizhou District, Guangyuan, Sichuan',
 
         'business.title': 'Our Business Scope',
         'section.news': 'News & Updates',
@@ -97,6 +98,7 @@ export const ui = {
         'contact.mobile': 'Mobile',
         'contact.mobile2': 'Mobile 2',
         'contact.email': 'Email',
+        'contact.desc': 'Welcome to contact us for business cooperation.',
 
         'feature.textiles': 'Textiles & Knitting',
         'feature.textiles_desc': 'High-quality fabrics, raw materials, and finished textiles for various industries.',
@@ -146,6 +148,7 @@ export const ui = {
         'contact.mobile': 'Móvil',
         'contact.wechat': 'WeChat',
         'contact.email': 'Correo electrónico',
+        'contact.desc': 'Le invitamos a contactarnos para la cooperación comercial.',
 
         'feature.textiles': 'Textiles y Tejidos',
         'feature.textiles_desc': 'Telas de alta calidad, materias primas y textiles acabados para diversas industrias.',
@@ -178,7 +181,7 @@ export const ui = {
         'about.learn_more': '詳細を見る',
         'about.company_name': '社名：広元盛遠国際貿易有限公司',
         'about.legal_rep': '代表者：謝金富',
-        'about.address': '住所：四川省広元市利州区万縁街道凰国路国投大厦20-1号',
+        'about.address': '住所：四川省広元市利州区万源街道万達中心10-5-6',
 
         'business.title': '事業内容',
         'section.news': 'ニュース＆アップデート',
@@ -195,6 +198,7 @@ export const ui = {
         'contact.mobile': '携帯電話',
         'contact.wechat': 'WeChat',
         'contact.email': 'Eメール',
+        'contact.desc': 'ビジネス協力に関するお問い合わせをお待ちしております。',
 
         'feature.textiles': '繊維・ニット',
         'feature.textiles_desc': '様々な産業向けの高品質な生地、原材料、完成繊維製品。',
@@ -244,6 +248,7 @@ export const ui = {
         'contact.mobile': '모바일',
         'contact.wechat': '위챗',
         'contact.email': '이메일',
+        'contact.desc': '비즈니스 협력에 관해 언제든지 문의해 주세요.',
 
         'feature.textiles': '섬유 및 니트',
         'feature.textiles_desc': '다양한 산업을 위한 고품질 원단, 원자재 및 완제품 섬유.',
@@ -276,7 +281,7 @@ export const ui = {
         'about.learn_more': 'En savoir plus',
         'about.company_name': 'Société : Guangyuan Shengyuan International Trade Co., Ltd.',
         'about.legal_rep': 'Rep. Légal : Xie Jinfu',
-        'about.address': 'Adr : No. 20-1, Batiment d\'Investissement d\'État, Route Huangguo, District Lizhou, Guangyuan, Sichuan',
+        'about.address': 'Adr : Salle 10-5-6, Centre Wanda, Sous-district Wanyuan, District Lizhou, Guangyuan, Sichuan',
 
         'business.title': 'Notre domaine d\'activité',
         'section.news': 'Actualités',
@@ -293,6 +298,7 @@ export const ui = {
         'contact.mobile': 'Mobile',
         'contact.wechat': 'WeChat',
         'contact.email': 'E-mail',
+        'contact.desc': 'N\'hésitez pas à nous contacter pour toute coopération commerciale.',
 
         'feature.textiles': 'Textiles et Tricots',
         'feature.textiles_desc': 'Tissus de haute qualité, matières premières et textiles finis pour diverses industries.',
@@ -374,7 +380,7 @@ export const ui = {
         'about.learn_more': 'Узнать больше',
         'about.company_name': 'Компания: Guangyuan Shengyuan International Trade Co., Ltd.',
         'about.legal_rep': 'Юр. представитель: Се Цзиньфу',
-        'about.address': 'Адрес: № 20-1, Здание Гос. Инвестиций, ул. Хуанго, район Личжоу, Гуанъюань, Сычуань',
+        'about.address': 'Адрес: Комната 10-5-6, Ванда Центр, Район Личжоу, Гуанъюань, Сычуань',
 
         'business.title': 'Сфера нашей деятельности',
         'section.news': 'Новости',
@@ -389,8 +395,10 @@ export const ui = {
         
         'contact.phone': 'Телефон',
         'contact.mobile': 'Мобильный',
+        'contact.mobile2': 'Мобильный 2',
         'contact.wechat': 'WeChat',
-        'contact.email': 'Электронная почта',
+        'contact.email': 'Эл. почта',
+        'contact.desc': 'Пожалуйста, свяжитесь с нами для делового сотрудничества.',
 
         'feature.textiles': 'Текстиль и трикотаж',
         'feature.textiles_desc': 'Высококачественные ткани, сырье и готовый текстиль для различных отраслей.',
@@ -423,7 +431,7 @@ export const ui = {
         'about.learn_more': 'Saiba Mais',
         'about.company_name': 'Empresa: Guangyuan Shengyuan International Trade Co., Ltd.',
         'about.legal_rep': 'Rep. Legal: Xie Jinfu',
-        'about.address': 'End: No. 20-1, Edifício de Investimento Estatal, Rua Huangguo, Distrito Lizhou, Guangyuan, Sichuan',
+        'about.address': 'End: Sala 10-5-6, Wanda Center, Subdistrito Wanyuan, Distrito Lizhou, Guangyuan, Sichuan',
 
         'business.title': 'Nosso Escopo de Negócios',
         'section.news': 'Notícias',
