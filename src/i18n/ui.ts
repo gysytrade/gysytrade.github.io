@@ -31,7 +31,7 @@ export const ui = {
         'about.learn_more': '了解更多',
         'about.company_name': '公司名称：广元盛远国际贸易有限公司',
         'about.legal_rep': '法定代表人：谢金富',
-        'about.address': '地址：四川省广元市利州区万缘街道凰国路国投大厦20-1号',
+        'about.address': '地址：四川省广元市利州区万源街道万达中心10-5-6',
 
         'business.title': '我们的业务范围',
         'feature.textiles': '纺织与针织',
