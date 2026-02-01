@@ -58,17 +58,17 @@ const features = [
   <section class="py-20 bg-slate-50/80 backdrop-blur-sm relative z-10">
     <div class="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="space-y-6">
-        <h4 class="text-accent font-bold tracking-wider uppercase text-sm">{t('about.title')}</h4>
-        <h2 class="text-3xl md:text-4xl font-bold font-serif text-primary">{t('about.title')}</h2>
+       
+        <h2 class="text-3xl md:text-4xl font-bold font-serif text-primary">值得信赖的全球贸易伙伴</h2>
         <p class="text-gray-600 leading-relaxed text-lg">
-          {t('about.desc')}
+          广元盛远国际贸易有限公司成立于2025年，位于四川广元，是一家综合性贸易企业。我们专注于纺织、建材、电子和农产品等广泛领域。
         </p>
         <p class="text-gray-600 leading-relaxed">
-          {t('about.leadership')}
+          我们本着诚信、创新、互利共赢的原则，致力于促进国际贸易畅通，为全球合作伙伴提供顶级服务。
         </p>
         <div class="pt-4">
           <a href="/about" class="text-primary font-bold hover:text-accent transition-colors flex items-center gap-2 group">
-            {t('about.learn_more')}
+            了解更多
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -91,32 +91,144 @@ const features = [
     features={features} 
   />
 
+  <!-- Logistics Services Section -->
+  <section class="py-20 bg-slate-50 relative z-10">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold font-serif text-primary mb-4">{t('logistics.title')}</h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">{t('logistics.subtitle')}</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <a href="/logistics/fcl-lcl" class="group block bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 overflow-hidden">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&h=400&fit=crop" alt="整箱拼箱服务" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{t('logistics.service_1_title')}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">{t('logistics.service_1_desc')}</p>
+            <span class="text-accent font-medium flex items-center gap-2 text-sm">
+              了解详情
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="/logistics/bulk-special" class="group block bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 overflow-hidden">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop" alt="散杂货特种运输" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{t('logistics.service_2_title')}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">{t('logistics.service_2_desc')}</p>
+            <span class="text-accent font-medium flex items-center gap-2 text-sm">
+              了解详情
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="/logistics/customs-clearance" class="group block bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 overflow-hidden">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop" alt="报关报检服务" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{t('logistics.service_3_title')}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">{t('logistics.service_3_desc')}</p>
+            <span class="text-accent font-medium flex items-center gap-2 text-sm">
+              了解详情
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+      
+      <div class="text-center">
+        <a href="/logistics" class="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors">
+          查看全部物流服务
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Partners Section -->
   <Partners />
 
   <!-- News Section -->
   {hasNews && (
-  <section class="py-20 relative z-10">
+  <section class="py-20 relative z-10 bg-gradient-to-b from-slate-50/50 to-white">
       <div class="container">
-          <h2 class="text-3xl font-bold font-serif text-center mb-12">{t('section.news')}</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {sortedNews.map(item => {
-                 const slugPart = item.slug.split('/')[1];
-                 const href = `/news/${slugPart}`;
-                 return (
-                  <a href={href} class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group block">
-                      <div class="text-sm text-accent font-bold mb-3 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-accent"></span>
-                        {item.data.date.toLocaleDateString(lang)}
+          <h2 class="text-3xl font-bold font-serif text-center mb-4">{t('section.news')}</h2>
+          <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">了解公司最新动态与行业资讯</p>
+          
+          <div class="relative" id="news-carousel">
+            <div class="overflow-hidden">
+              <div class="flex transition-transform duration-500 ease-in-out" id="news-track">
+                  {sortedNews.map(item => {
+                     const slugPart = item.slug.split('/')[1];
+                     const href = `/news/${slugPart}`;
+                     return (
+                      <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                        <a href={href} class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group block h-full">
+                            <div class="text-sm text-accent font-bold mb-3 flex items-center gap-2">
+                              <span class="w-2 h-2 rounded-full bg-accent"></span>
+                              {item.data.date.toLocaleDateString(lang)}
+                            </div>
+                            <h3 class="text-xl font-bold text-primary leading-tight mb-3 group-hover:text-accent transition-colors">
+                              {item.data.title}
+                            </h3>
+                            <p class="text-gray-500 line-clamp-3 text-sm leading-relaxed">
+                              {item.data.description}
+                            </p>
+                        </a>
                       </div>
-                      <h3 class="text-xl font-bold text-primary leading-tight mb-3 group-hover:text-accent transition-colors">
-                        {item.data.title}
-                      </h3>
-                      <p class="text-gray-500 line-clamp-3 text-sm leading-relaxed">
-                        {item.data.description}
-                      </p>
-                  </a>
-              )})}
+                  )})}
+              </div>
+            </div>
+            
+            <button id="prev-news" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white shadow-lg rounded-full p-3 text-primary hover:text-accent hover:scale-110 transition-all z-10 hidden md:flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button id="next-news" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white shadow-lg rounded-full p-3 text-primary hover:text-accent hover:scale-110 transition-all z-10 hidden md:flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            
+            <div class="flex justify-center gap-2 mt-6" id="news-indicators">
+              {sortedNews.map((_, index) => (
+                <button class={`w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-accent w-6' : 'bg-gray-300 hover:bg-gray-400'}`} data-index={index}></button>
+              ))}
+            </div>
           </div>
       </div>
   </section>
@@ -135,3 +247,90 @@ const features = [
     </div>
   </section>
 </Layout>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('news-track');
+  const prevBtn = document.getElementById('prev-news');
+  const nextBtn = document.getElementById('next-news');
+  const indicators = document.querySelectorAll('#news-indicators button');
+  
+  if (!track || !indicators.length) return;
+  
+  const slides = track.children;
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+  let autoPlayInterval: NodeJS.Timeout | number | undefined;
+  
+  function getSlidesPerView() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  }
+  
+  function updateCarousel() {
+    const slideWidth = 100 / getSlidesPerView();
+    const offset = -(currentIndex * slideWidth);
+    track.style.transform = `translateX(${offset}%)`;
+    
+    indicators.forEach((indicator, index) => {
+      if (index === currentIndex % totalSlides) {
+        indicator.classList.remove('bg-gray-300', 'hover:bg-gray-400');
+        indicator.classList.add('bg-accent', 'w-6');
+      } else {
+        indicator.classList.remove('bg-accent', 'w-6');
+        indicator.classList.add('bg-gray-300', 'hover:bg-gray-400');
+      }
+    });
+  }
+  
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel();
+  }
+  
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+  
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetAutoPlay();
+  });
+  
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    resetAutoPlay();
+  });
+  
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      currentIndex = index;
+      updateCarousel();
+      resetAutoPlay();
+    });
+  });
+  
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(nextSlide, 5000);
+  }
+  
+  function resetAutoPlay() {
+    clearInterval(autoPlayInterval);
+    startAutoPlay();
+  }
+  
+  track.addEventListener('mouseenter', () => {
+    clearInterval(autoPlayInterval);
+  });
+  
+  track.addEventListener('mouseleave', () => {
+    startAutoPlay();
+  });
+  
+  startAutoPlay();
+  
+  window.addEventListener('resize', updateCarousel);
+});
+</script>

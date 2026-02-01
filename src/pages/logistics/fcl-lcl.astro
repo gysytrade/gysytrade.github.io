@@ -1,0 +1,160 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+import PageHeader from '../../components/PageHeader.astro';
+
+const lang = 'zh';
+const t = useTranslations(lang);
+
+const fclFeatures = [
+  {
+    title: '整箱运输 (FCL)',
+    description: '提供20尺、40尺标准集装箱及40尺高柜等多种规格选择，适合大批量货物运输。',
+    benefits: ['专属集装箱使用', '货物安全性高', '装卸效率高', '适合大宗货物']
+  },
+  {
+    title: '拼箱运输 (LCL)',
+    description: '将多个发货人的货物拼装在一个集装箱内，降低小批量货物的运输成本。',
+    benefits: ['成本分摊', '灵活起运量', '门到门服务', '全球网络覆盖']
+  }
+];
+
+const serviceHighlights = [
+  {
+    icon: 'globe',
+    title: '全球航线覆盖',
+    description: '覆盖全球80+国家，240+服务据点，五大航线区域'
+  },
+  {
+    icon: 'clock',
+    title: '稳定船期',
+    description: '与主流船公司长期合作，确保舱位和稳定船期'
+  },
+  {
+    icon: 'shield',
+    title: '货物保障',
+    description: '提供货物运输保险，全程跟踪货物状态'
+  },
+  {
+    icon: 'support',
+    title: '专业客服',
+    description: '7×24小时客服支持，及时响应客户需求'
+  }
+];
+---
+
+<Layout title={`海运整箱/拼箱 - ${t('logistics.title')} - ${t('site.name')}`}>
+  <PageHeader
+    title="海运整箱/拼箱服务"
+    subtitle="FCL / LCL Ocean Freight Services"
+    bgImage="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=2070"
+    textColor="white"
+  />
+
+  <!-- Service Introduction -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold font-serif text-primary mb-6">
+          专业海运解决方案
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          我们提供全面的海运整箱(FCL)和拼箱(LCL)服务，依托全球80多个国家的服务网络，
+          为您的货物提供安全、高效、经济的运输方案。无论是大宗货物还是小批量货物，
+          我们都能为您量身定制最优的物流解决方案。
+        </p>
+      </div>
+
+      <!-- FCL & LCL Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        {fclFeatures.map((service) => (
+          <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+            <h3 class="text-2xl font-bold text-primary mb-4">{service.title}</h3>
+            <p class="text-gray-600 mb-6">{service.description}</p>
+            <ul class="space-y-3">
+              {service.benefits.map((benefit) => (
+                <li class="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-gray-700">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- Service Highlights -->
+      <h3 class="text-2xl font-bold text-primary text-center mb-8">服务优势</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {serviceHighlights.map((highlight) => (
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+              {highlight.icon === 'globe' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              )}
+              {highlight.icon === 'clock' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              )}
+              {highlight.icon === 'shield' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              )}
+              {highlight.icon === 'support' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              )}
+            </div>
+            <h4 class="font-bold text-primary mb-2">{highlight.title}</h4>
+            <p class="text-sm text-gray-600">{highlight.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container">
+      <h2 class="text-3xl font-bold font-serif text-primary text-center mb-12">服务流程</h2>
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {[
+            { step: '01', title: '咨询报价', desc: '提供货物信息，获取运输方案和报价' },
+            { step: '02', title: '订舱确认', desc: '确认船期、舱位，签订运输合同' },
+            { step: '03', title: '货物出运', desc: '装箱、报关、装船，全程跟踪' },
+            { step: '04', title: '目的港交付', desc: '清关、提货，门到门送达' }
+          ].map((item) => (
+            <div class="relative">
+              <div class="text-5xl font-bold text-accent/20 mb-4">{item.step}</div>
+              <h3 class="text-lg font-bold text-primary mb-2">{item.title}</h3>
+              <p class="text-gray-600 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">
+        获取海运报价
+      </h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+        联系我们获取详细的海运方案和报价，我们的专业团队将为您提供最优的物流解决方案
+      </p>
+      <a href="/contact" class="btn-accent text-lg px-10 py-5 rounded-full inline-block">
+        立即咨询
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -20,20 +20,22 @@ const subColor = textColor === 'white' ? '!text-gray-100' : '!text-gray-700';
 const overlayClass = textColor === 'white' ? 'bg-primary/60' : 'bg-white/80';
 ---
 
-<div class={`relative pt-40 pb-24 overflow-hidden`}>
+<div class={`relative min-h-[500px] md:min-h-[600px] overflow-hidden`}>
   <!-- Background Image -->
   <div class="absolute inset-0 z-0">
-    <img src={bgImage} alt="Background" class="w-full h-full object-cover" />
+    <img src={bgImage} alt="Background" class="w-full h-full object-cover object-center" />
     <div class={`absolute inset-0 ${overlayClass} ${overlayOpacity}`}></div>
   </div>
 
   <!-- Content -->
-  <div class="container relative z-10 text-center">
-    <h1 class={`text-4xl md:text-5xl font-bold font-serif mb-6 drop-shadow-sm ${titleColor}`}>{title}</h1>
-    {subtitle && (
-      <p class={`text-xl max-w-2xl mx-auto font-medium ${subColor}`}>
-        {subtitle}
-      </p>
-    )}
+  <div class="container relative z-10 h-full flex items-center justify-center text-center py-20">
+    <div class="max-w-4xl">
+      <h1 class={`text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-6 drop-shadow-lg ${titleColor}`}>{title}</h1>
+      {subtitle && (
+        <p class={`text-lg md:text-xl max-w-2xl mx-auto font-medium ${subColor}`}>
+          {subtitle}
+        </p>
+      )}
+    </div>
   </div>
 </div>

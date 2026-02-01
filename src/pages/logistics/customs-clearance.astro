@@ -1,0 +1,280 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+import PageHeader from '../../components/PageHeader.astro';
+
+const lang = 'zh';
+const t = useTranslations(lang);
+
+const customsServices = [
+  {
+    title: '进口清关',
+    description: '提供全面的进口报关、报检服务，确保货物顺利通关。',
+    features: [
+      '进口报关申报',
+      '海关查验协调',
+      '进口税费代缴',
+      '单证审核制作',
+      '通关状态跟踪'
+    ]
+  },
+  {
+    title: '出口报关',
+    description: '专业的出口报关服务，助力货物快速出口。',
+    features: [
+      '出口报关申报',
+      '出口许可证办理',
+      '原产地证办理',
+      '商检报检服务',
+      '出口退税咨询'
+    ]
+  },
+  {
+    title: '贸易合规咨询',
+    description: '提供专业的贸易合规咨询服务，降低贸易风险。',
+    features: [
+      'HS编码归类咨询',
+      '贸易政策解读',
+      '关税优化方案',
+      'AEO认证咨询',
+      '贸易风险评估'
+    ]
+  }
+];
+
+const processSteps = [
+  {
+    step: 1,
+    title: '单证准备',
+    desc: '收集整理报关所需单证资料',
+    details: ['合同、发票、装箱单', '提单/运单', '原产地证书', '其他监管证件']
+  },
+  {
+    step: 2,
+    title: '申报录入',
+    desc: '向海关进行电子数据申报',
+    details: ['电子口岸申报', 'HS编码归类', '价格审核', '申报要素录入']
+  },
+  {
+    step: 3,
+    title: '海关审单',
+    desc: '海关审核申报数据',
+    details: ['数据逻辑审核', '价格质疑处理', '归类质疑处理', '补充资料提交']
+  },
+  {
+    step: 4,
+    title: '查验放行',
+    desc: '配合海关查验，完成通关',
+    details: ['查验预约协调', '现场查验配合', '税费缴纳', '提货放行']
+  }
+];
+
+const advantages = [
+  {
+    title: '专业团队',
+    desc: '10年以上报关经验的专业团队，熟悉各类商品报关流程',
+    icon: 'users'
+  },
+  {
+    title: '高效通关',
+    desc: '与海关建立良好合作关系，确保货物快速通关',
+    icon: 'speed'
+  },
+  {
+    title: '全国网络',
+    desc: '覆盖全国主要口岸的报关服务网络',
+    icon: 'network'
+  },
+  {
+    title: '风险管控',
+    desc: '完善的贸易合规体系，有效管控通关风险',
+    icon: 'shield'
+  }
+];
+---
+
+<Layout title={`进出口清关报关 - ${t('logistics.title')} - ${t('site.name')}`}>
+  <PageHeader 
+    title="进出口清关报关"
+    subtitle="Import & Export Customs Clearance"
+    bgImage="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2070"
+    textColor="white"
+  />
+
+  <!-- Service Introduction -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold font-serif text-primary mb-6">
+          专业清关服务
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          我们提供全方位的进出口清关报关服务，拥有经验丰富的报关团队和完善的通关网络。
+          无论是普通货物还是特殊监管货物，我们都能为您提供高效、合规的清关解决方案，
+          确保您的货物顺利、快速通关。
+        </p>
+      </div>
+
+      <!-- Service Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        {customsServices.map((service) => (
+          <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 h-full">
+            <h3 class="text-xl font-bold text-primary mb-4">{service.title}</h3>
+            <p class="text-gray-600 mb-6">{service.description}</p>
+            <ul class="space-y-3">
+              {service.features.map((feature) => (
+                <li class="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="text-gray-700">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- Advantages -->
+      <h3 class="text-2xl font-bold text-primary text-center mb-8">服务优势</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {advantages.map((adv) => (
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+              {adv.icon === 'users' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              )}
+              {adv.icon === 'speed' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              )}
+              {adv.icon === 'network' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+              )}
+              {adv.icon === 'shield' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              )}
+            </div>
+            <h4 class="font-bold text-primary mb-2">{adv.title}</h4>
+            <p class="text-sm text-gray-600">{adv.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container">
+      <h2 class="text-3xl font-bold font-serif text-primary text-center mb-12">清关流程</h2>
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {processSteps.map((item) => (
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center font-bold">
+                  {item.step}
+                </div>
+                <h3 class="font-bold text-primary">{item.title}</h3>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">{item.desc}</p>
+              <ul class="space-y-1">
+                {item.details.map((detail) => (
+                  <li class="text-xs text-gray-500 flex items-center gap-1">
+                    <span class="w-1 h-1 bg-accent rounded-full"></span>
+                    {detail}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Required Documents -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <h2 class="text-3xl font-bold font-serif text-primary text-center mb-12">所需单证</h2>
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-slate-50 p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-primary mb-6 flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+            进口所需单证
+          </h3>
+          <ul class="space-y-3">
+            {[
+              '商业发票 (Commercial Invoice)',
+              '装箱单 (Packing List)',
+              '提单/运单 (B/L or AWB)',
+              '合同 (Contract)',
+              '原产地证书 (CO)',
+              '进口许可证（如需要）',
+              '检验检疫证书（如需要）',
+              '其他监管证件'
+            ].map((doc) => (
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span class="text-gray-700">{doc}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-slate-50 p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-primary mb-6 flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+            </svg>
+            出口所需单证
+          </h3>
+          <ul class="space-y-3">
+            {[
+              '商业发票 (Commercial Invoice)',
+              '装箱单 (Packing List)',
+              '报关委托书',
+              '合同 (Contract)',
+              '出口许可证（如需要）',
+              '原产地证书 (CO/FORM A)',
+              '商检证书（如需要）',
+              '其他监管证件'
+            ].map((doc) => (
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span class="text-gray-700">{doc}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">
+        清关服务咨询
+      </h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+        无论您是进口还是出口，我们的专业报关团队都将为您提供高效、合规的清关服务
+      </p>
+      <a href="/contact" class="btn-accent text-lg px-10 py-5 rounded-full inline-block">
+        立即咨询
+      </a>
+    </div>
+  </section>
+</Layout>

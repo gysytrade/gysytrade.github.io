@@ -1,0 +1,143 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+import PageHeader from '../../components/PageHeader.astro';
+
+const lang = 'zh';
+const t = useTranslations(lang);
+
+const bulkServices = [
+  {
+    title: '散货船运输',
+    description: '为大宗散货提供专业运输方案，包括矿石、粮食、煤炭等大宗商品的海运服务。',
+    features: ['大宗散货运输', '专业装卸设备', '灵活航线安排', '成本优化方案']
+  },
+  {
+    title: '特种箱运输',
+    description: '提供开顶箱、平板箱、冷藏箱等特种集装箱，满足特殊货物的运输需求。',
+    features: ['开顶箱(OT)', '平板箱(Flat Rack)', '冷藏箱(Reefer)', '挂衣箱(Garment)']
+  },
+  {
+    title: '项目货物运输',
+    description: '为大型工程项目提供定制化物流方案，包括超限、超重货物的专业运输。',
+    features: ['超限货物运输', '超重设备运输', '项目物流规划', '全程跟踪服务']
+  }
+];
+
+const equipmentTypes = [
+  { name: '20尺开顶箱', code: '20\'OT', desc: '适合超高货物，顶部可开启' },
+  { name: '40尺开顶箱', code: '40\'OT', desc: '适合超高货物，顶部可开启' },
+  { name: '20尺平板箱', code: '20\'FR', desc: '适合超宽、超重货物' },
+  { name: '40尺平板箱', code: '40\'FR', desc: '适合超宽、超重货物' },
+  { name: '20尺冷藏箱', code: '20\'RF', desc: '温控范围-30°C至+30°C' },
+  { name: '40尺冷藏箱', code: '40\'RF', desc: '温控范围-30°C至+30°C' }
+];
+---
+
+<Layout title={`散货船/特种箱海运 - ${t('logistics.title')} - ${t('site.name')}`}>
+  <PageHeader
+    title="散货船/特种箱海运"
+    subtitle="Bulk & Special Container Shipping"
+    bgImage="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2070"
+    textColor="white"
+  />
+
+  <!-- Service Introduction -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold font-serif text-primary mb-6">
+          特种货物运输专家
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          针对大宗散货、超限货物、温控货物等特殊运输需求，我们提供专业的散货船和特种集装箱运输服务。
+          凭借丰富的项目经验和专业的操作团队，确保您的特殊货物安全、准时到达目的地。
+        </p>
+      </div>
+
+      <!-- Service Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        {bulkServices.map((service) => (
+          <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 h-full">
+            <h3 class="text-xl font-bold text-primary mb-4">{service.title}</h3>
+            <p class="text-gray-600 mb-6">{service.description}</p>
+            <ul class="space-y-2">
+              {service.features.map((feature) => (
+                <li class="flex items-center gap-2 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-gray-700">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- Equipment Types -->
+      <h3 class="text-2xl font-bold text-primary text-center mb-8">特种箱型介绍</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {equipmentTypes.map((equip) => (
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-primary">{equip.name}</h4>
+                <span class="text-sm text-accent font-mono">{equip.code}</span>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm">{equip.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Scenarios -->
+  <section class="section-padding bg-slate-50">
+    <div class="container">
+      <h2 class="text-3xl font-bold font-serif text-primary text-center mb-12">应用场景</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          { title: '机械设备', desc: '大型机械、生产线设备、工业设备', icon: 'cog' },
+          { title: '建筑材料', desc: '钢材、铝材、玻璃、预制构件', icon: 'building' },
+          { title: '农产品', desc: '粮食、饲料、冷冻食品、生鲜', icon: 'leaf' },
+          { title: '能源矿产', desc: '煤炭、矿石、石油制品、化工原料', icon: 'fire' }
+        ].map((item) => (
+          <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+            <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {item.icon === 'cog' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />}
+                {item.icon === 'building' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />}
+                {item.icon === 'leaf' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />}
+                {item.icon === 'fire' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />}
+              </svg>
+            </div>
+            <h4 class="font-bold text-primary mb-2">{item.title}</h4>
+            <p class="text-gray-600 text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">
+        特种货物运输咨询
+      </h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+        针对您的特殊货物需求，我们的专业团队将为您提供定制化的运输方案和报价
+      </p>
+      <a href="/contact" class="btn-accent text-lg px-10 py-5 rounded-full inline-block">
+        获取方案
+      </a>
+    </div>
+  </section>
+</Layout>

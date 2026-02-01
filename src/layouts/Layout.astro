@@ -22,7 +22,7 @@ const getLogoText = () => {
   if (lang === 'zh') {
     return {
       main: '广元盛远',
-      sub: '国际贸易'
+      sub: '国际贸易(物流)'
     };
   }
   return {
@@ -68,12 +68,13 @@ const { title, description = "Guangyuan Shengyuan International Trade Co., Ltd. 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
           <a href={getLocalizedUrl("/")} class="text-sm font-semibold font-serif text-primary hover:text-accent transition-colors tracking-wide">{t('nav.home')}</a>
-          <a href={getLocalizedUrl("/about")} class="text-sm font-semibold font-serif text-primary hover:text-accent transition-colors tracking-wide">{t('nav.about')}</a>
           <a href={getLocalizedUrl("/products")} class="text-sm font-semibold font-serif text-primary hover:text-accent transition-colors tracking-wide">{t('nav.products')}</a>
+          <a href={getLocalizedUrl("/logistics")} class="text-sm font-semibold font-serif text-primary hover:text-accent transition-colors tracking-wide">{t('nav.logistics')}</a>
+          <a href={getLocalizedUrl("/about")} class="text-sm font-semibold font-serif text-primary hover:text-accent transition-colors tracking-wide">{t('nav.about')}</a>
           <a href={getLocalizedUrl("/contact")} class="text-sm font-semibold font-serif text-primary hover:text-accent transition-colors tracking-wide">{t('nav.contact')}</a>
-          
+
           <div class="border-l border-gray-200 h-6 mx-2"></div>
-          
+
           <LanguagePicker />
         </div>
 
@@ -98,8 +99,9 @@ const { title, description = "Guangyuan Shengyuan International Trade Co., Ltd. 
         <div class="flex flex-col h-full pt-16 pb-4 px-4">
           <div class="w-full space-y-1.5">
             <a href={getLocalizedUrl("/")} class="block text-base font-semibold font-serif text-gray-800 py-2.5 px-4 rounded-md bg-gray-50 hover:bg-gray-100 hover:text-primary transition-all duration-300 transform hover:translate-x-1">{t('nav.home')}</a>
-            <a href={getLocalizedUrl("/about")} class="block text-base font-semibold font-serif text-gray-800 py-2.5 px-4 rounded-md bg-gray-50 hover:bg-gray-100 hover:text-primary transition-all duration-300 transform hover:translate-x-1">{t('nav.about')}</a>
             <a href={getLocalizedUrl("/products")} class="block text-base font-semibold font-serif text-gray-800 py-2.5 px-4 rounded-md bg-gray-50 hover:bg-gray-100 hover:text-primary transition-all duration-300 transform hover:translate-x-1">{t('nav.products')}</a>
+            <a href={getLocalizedUrl("/logistics")} class="block text-base font-semibold font-serif text-gray-800 py-2.5 px-4 rounded-md bg-gray-50 hover:bg-gray-100 hover:text-primary transition-all duration-300 transform hover:translate-x-1">{t('nav.logistics')}</a>
+            <a href={getLocalizedUrl("/about")} class="block text-base font-semibold font-serif text-gray-800 py-2.5 px-4 rounded-md bg-gray-50 hover:bg-gray-100 hover:text-primary transition-all duration-300 transform hover:translate-x-1">{t('nav.about')}</a>
             <a href={getLocalizedUrl("/contact")} class="block text-base font-semibold font-serif text-gray-800 py-2.5 px-4 rounded-md bg-gray-50 hover:bg-gray-100 hover:text-primary transition-all duration-300 transform hover:translate-x-1">{t('nav.contact')}</a>
           </div>
           
@@ -308,7 +310,7 @@ const { title, description = "Guangyuan Shengyuan International Trade Co., Ltd. 
             zoomControl: true,
             interactive: true,
             clickToOpen: false,
-            popup: "<b>广元盛远 (Guangyuan Shengyuan)</b><br>广元万达广场 (Wanda Plaza, Guangyuan)"
+            popup: "<b>广元盛远国际贸易(物流)有限公司</b><br>广元万达广场 (Wanda Plaza, Guangyuan)"
           });
         }
       });
