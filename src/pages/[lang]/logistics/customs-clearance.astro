@@ -1,0 +1,161 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { languages } from '../../../i18n/ui';
+import { useTranslations } from '../../../i18n/utils';
+import PageHeader from '../../../components/PageHeader.astro';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang as any);
+
+const customsServices = [
+  {
+    title: t('logistics.customs_import_title'),
+    description: t('logistics.customs_import_desc'),
+    features: [
+      t('logistics.customs_import_feature_1'),
+      t('logistics.customs_import_feature_2'),
+      t('logistics.customs_import_feature_3'),
+      t('logistics.customs_import_feature_4')
+    ]
+  },
+  {
+    title: t('logistics.customs_export_title'),
+    description: t('logistics.customs_export_desc'),
+    features: [
+      t('logistics.customs_export_feature_1'),
+      t('logistics.customs_export_feature_2'),
+      t('logistics.customs_export_feature_3'),
+      t('logistics.customs_export_feature_4')
+    ]
+  },
+  {
+    title: t('logistics.customs_consulting_title'),
+    description: t('logistics.customs_consulting_desc'),
+    features: [
+      t('logistics.customs_consulting_feature_1'),
+      t('logistics.customs_consulting_feature_2'),
+      t('logistics.customs_consulting_feature_3'),
+      t('logistics.customs_consulting_feature_4')
+    ]
+  }
+];
+
+const advantages = [
+  { title: t('logistics.customs_advantage_1_title'), description: t('logistics.customs_advantage_1_desc') },
+  { title: t('logistics.customs_advantage_2_title'), description: t('logistics.customs_advantage_2_desc') },
+  { title: t('logistics.customs_advantage_3_title'), description: t('logistics.customs_advantage_3_desc') },
+  { title: t('logistics.customs_advantage_4_title'), description: t('logistics.customs_advantage_4_desc') },
+  { title: t('logistics.customs_advantage_5_title'), description: t('logistics.customs_advantage_5_desc') },
+  { title: t('logistics.customs_advantage_6_title'), description: t('logistics.customs_advantage_6_desc') }
+];
+
+const process = [
+  { title: t('logistics.customs_process_1_title'), desc: t('logistics.customs_process_1_desc') },
+  { title: t('logistics.customs_process_2_title'), desc: t('logistics.customs_process_2_desc') },
+  { title: t('logistics.customs_process_3_title'), desc: t('logistics.customs_process_3_desc') },
+  { title: t('logistics.customs_process_4_title'), desc: t('logistics.customs_process_4_desc') }
+];
+---
+
+<Layout title={`${t('logistics.service_3_title')} - ${t('logistics.title')} - ${t('site.name')}`}>
+  <PageHeader 
+    title={t('logistics.service_3_title')}
+    subtitle={t('logistics.customs_subtitle')}
+    bgImage="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2070"
+    textColor="white"
+  />
+
+  <!-- Introduction Section -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold font-serif text-primary mb-6">
+          {t('logistics.customs_title')}
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          {t('logistics.customs_desc')}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container">
+      <h2 class="text-3xl font-bold font-serif text-primary text-center mb-12">{t('logistics.customs_services_title')}</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {customsServices.map((service) => (
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-xl font-bold text-primary mb-4">{service.title}</h3>
+            <p class="text-gray-600 mb-6">{service.description}</p>
+            <ul class="space-y-3">
+              {service.features.map((feature) => (
+                <li class="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-gray-700 font-medium">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Advantages Section -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <h2 class="text-3xl font-bold font-serif text-primary text-center mb-12">{t('logistics.customs_advantages_title')}</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {advantages.map((item) => (
+          <div class="bg-slate-50 p-6 rounded-xl border border-gray-100">
+            <h3 class="text-lg font-bold text-primary mb-3">{item.title}</h3>
+            <p class="text-gray-600">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container">
+      <h2 class="text-3xl font-bold font-serif text-primary text-center mb-12">{t('logistics.customs_process_title')}</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {process.map((step, index) => (
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+            <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-accent font-bold text-xl">{index + 1}</span>
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-3">{step.title}</h3>
+            <p class="text-gray-600">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">
+        {t('logistics.customs_cta_title')}
+      </h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+        {t('logistics.customs_cta_desc')}
+      </p>
+      <a href={`/${lang}/contact`} class="btn-accent text-lg px-10 py-5 rounded-full inline-block">
+        {t('logistics.customs_cta_button')}
+      </a>
+    </div>
+  </section>
+</Layout>
