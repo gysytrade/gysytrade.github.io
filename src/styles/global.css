@@ -42,7 +42,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-serif);
-  @apply font-bold tracking-tight text-primary;
+  @apply font-bold tracking-tight;
 }
 
 .container {
@@ -129,4 +129,29 @@ h6 {
 
 .animate-underline-flow {
   animation: underline-flow 3s ease-in-out infinite;
+}
+
+/* 航线虚线动画 */
+.route-dash {
+  stroke-dasharray: 5, 5;
+  animation: dash 20s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.route-card:hover .route-dash {
+  animation: dash 10s linear infinite;
+}
+
+.route-line {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.route-card:hover .route-line {
+  opacity: 1;
 }
