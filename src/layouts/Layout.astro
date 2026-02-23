@@ -22,12 +22,14 @@ const getLogoText = () => {
   if (lang === 'zh') {
     return {
       main: '广元盛远',
-      sub: '国际贸易(物流)'
+      sub1: '国际贸易',
+      sub2: '国际物流'
     };
   }
   return {
     main: 'GUANGYUAN',
-    sub: 'SHENGYUAN'
+    sub1: 'SHENGYUAN',
+    sub2: ''
   };
 };
 
@@ -59,9 +61,14 @@ const { title, description = "Guangyuan Shengyuan International Trade Co., Ltd. 
         <!-- Logo -->
         <a href={getLocalizedUrl("/")} class="flex items-center gap-3 group">
           <img src="/logo.png" alt="Guangyuan Shengyuan Logo" class="h-16 w-auto object-contain" />
-          <div class="flex items-center gap-2">
-            <span class="text-xl font-bold font-serif text-primary leading-none tracking-tight">{getLogoText().main}</span>
-            <span class="text-xl font-bold font-serif text-accent leading-none tracking-tight">{getLogoText().sub}</span>
+          <div class="flex flex-col items-center gap-1">
+            <span class="text-2xl font-bold font-serif text-primary leading-none tracking-wide drop-shadow-sm">{getLogoText().main}</span>
+            <div class="flex items-center gap-2 text-sm relative overflow-hidden">
+              <span class="font-semibold text-primary leading-none animate-slide-in-left" style="animation-delay: 0s">{getLogoText().sub1}</span>
+              <span class="text-gray-300 animate-fade-pulse">|</span>
+              <span class="font-semibold text-accent leading-none animate-slide-in-right" style="animation-delay: 0.2s">{getLogoText().sub2}</span>
+              <div class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary via-accent to-primary opacity-30 animate-underline-flow"></div>
+            </div>
           </div>
         </a>
         
@@ -140,10 +147,20 @@ const { title, description = "Guangyuan Shengyuan International Trade Co., Ltd. 
     <footer class="bg-primary text-white py-12 border-t border-gray-800 relative z-10">
       <div class="container grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="col-span-1 md:col-span-2">
-          <h3 class="text-xl font-bold font-serif mb-4 flex items-center gap-2">
-            <div class="w-8 h-8 border border-accent/50 rounded flex items-center justify-center text-accent text-sm">GS</div>
-            <span class="text-white">Guangyuan Shengyuan</span> 
-          </h3>
+          <div class="mb-4 flex flex-col items-start">
+            <div class="flex items-center gap-2 mb-1.5">
+              <div class="w-10 h-10 border-2 border-accent/50 rounded flex items-center justify-center text-accent text-sm font-bold">GS</div>
+              <div class="flex flex-col items-center gap-1">
+                <span class="text-2xl font-bold font-serif text-white drop-shadow-md tracking-wide">广元盛远</span>
+                <div class="flex items-center gap-2 text-sm relative">
+                  <span class="text-gray-200 font-medium animate-slide-in-left" style="animation-delay: 0s">国际贸易</span>
+                  <span class="text-gray-500 animate-fade-pulse">|</span>
+                  <span class="text-accent font-medium animate-slide-in-right" style="animation-delay: 0.2s">国际物流</span>
+                  <div class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent opacity-40 animate-underline-flow"></div>
+                </div>
+              </div>
+            </div>
+          </div>
           <p class="text-gray-400 max-w-sm mb-6">
             {t('footer.desc')}
           </p>
